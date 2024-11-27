@@ -34,15 +34,18 @@ function changeBannerOnScroll() {
     console.log("Scroll Position: " + scrollPosition);  // Cek posisi scroll
     let bannerIndex = 0;
 
-    if (scrollPosition > 1000) {
-        bannerIndex = 1;
+    // Ubah gambar berdasarkan posisi scroll
+    if (scrollPosition > 500) {
+        bannerIndex = 1;  // Ganti ke banner 2 setelah scroll > 500px
     }
-    if (scrollPosition > 2000) {
-        bannerIndex = 2;
+    if (scrollPosition > 1500) {
+        bannerIndex = 2;  // Ganti ke banner 3 setelah scroll > 1500px
     }
 
+    console.log("Banner Index: " + bannerIndex);  // Cek index gambar yang akan digunakan
     heroSection.style.backgroundImage = `url(${banners[bannerIndex]})`;
 }
+
 
 window.addEventListener('scroll', changeBannerOnScroll);
 
