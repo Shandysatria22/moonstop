@@ -16,9 +16,9 @@ body {
     transition: transform 0.5s ease-in-out;
   }
   
-  #hero1 { background-image: url('images/hero1.jpg'); }
-  #hero2 { background-image: url('images/hero2.jpg'); }
-  #hero3 { background-image: url('images/hero3.jpg'); }
+  #hero1 { background-image: url('images/banner-1.png'); }
+  #hero2 { background-image: url('images/banner-2.png'); }
+  #hero3 { background-image: url('images/banner-3.png'); }
   
   
   .navigation {
