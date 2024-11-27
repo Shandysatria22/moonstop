@@ -16,11 +16,18 @@ body {
   transition: transform 0.5s ease-in-out;
 }
 
+@font-face {
+  font-family: 'Story Milky';
+  src: url('fonts/story-milky.woff') format('woff'),  /* Sesuaikan dengan format font yang di-download */
+       url('fonts/story-milky.ttf') format('truetype');
+}
+
 #hero1 h1 {
-  font-family: 'Story Milky', sans-serif; /* Menggunakan font Story Milky */
-  font-size: 52px; /* Ukuran font 52px */
+  font-family: 'Story Milky', Arial, sans-serif;
+  font-size: 180px; /* Ukuran font 52px */
   font-weight: normal;
   text-align: center;
+  color: black;
 }
 
 
