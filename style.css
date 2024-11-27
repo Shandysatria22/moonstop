@@ -31,15 +31,37 @@ body {
   }
   
   .dot {
-    width: 15px;
-    height: 15px;
-    background-color: #ccc;
-    border: 1px solid #999; /* Tambahkan border */
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: 1px solid var(--black-2); /* Pastikan var(--black-2) didefinisikan */
     border-radius: 50%;
-    margin-bottom: 5px; /* Jarak antar titik */
+    margin: 10px 0 !important;
     cursor: pointer;
+    position: relative; /* Untuk posisi titik kecil di tengah */
+  }
+  
+  .dot::before { /* Titik kecil di tengah */
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px; /* Sesuaikan ukuran titik */
+    height: 8px; /* Sesuaikan ukuran titik */
+    background-color: var(--black-2); /* Warna titik kecil, samakan dengan border */
+    border-radius: 50%;
+  }
+  
+  .dot.active::before {
+    background-color: var(--primary-color); /* Warna titik aktif */
   }
   
   .dot.active {
-    background-color: black;
+    border-color: var(--primary-color); /* Warna border titik aktif */
+  }
+
+  :root {
+    --black-2: #333; /* Contoh warna */
+    --primary-color: #007bff; /* Contoh warna */
   }
