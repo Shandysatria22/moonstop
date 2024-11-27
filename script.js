@@ -2,6 +2,12 @@ window.addEventListener('scroll', function() {
     let scrollPosition = window.pageYOffset;
     let windowHeight = window.innerHeight;
     let heroSections = document.querySelectorAll('.hero-section');
+    let dots = document.querySelectorAll('.dot');
+    let activeDotIndex = Math.floor(scrollPosition / windowHeight);
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === activeDotIndex);
+    });
+  });
   
     heroSections.forEach(section => {
       let sectionTop = section.offsetTop;
@@ -14,4 +20,3 @@ window.addEventListener('scroll', function() {
           section.style.transform = 'scale(1)';
       }
     });
-  });
