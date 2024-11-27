@@ -1,28 +1,26 @@
-const slides = document.querySelectorAll('.slide');  // Mengambil semua slide
-let currentIndex = 0;  // Indeks slide yang aktif
+const slides = document.querySelectorAll('.slide');
+let currentIndex = 0;  // Index slide yang aktif
 
-// Fungsi untuk mengganti slide
+// Fungsi untuk mengubah slide
 function changeSlide(index) {
-    // Hapus kelas 'active' dari semua slide
+    // Menghapus kelas 'active' dari semua slide
     slides.forEach((slide) => {
         slide.classList.remove('active');
     });
 
-    // Tambahkan kelas 'active' pada slide yang sesuai
+    // Menambahkan kelas 'active' pada slide yang dipilih
     slides[index].classList.add('active');
-    console.log("Current Slide Index:", index);  // Debugging untuk melihat indeks saat ini
 }
 
-// Menangani event scroll
+// Event listener untuk scroll
 window.addEventListener('scroll', () => {
-    // Hitung posisi scroll dalam piksel
+    // Menghitung posisi scroll saat ini
     const scrollPosition = window.scrollY;
-    console.log("Scroll Position:", scrollPosition);  // Debugging untuk melihat posisi scroll
-    
-    // Hitung slide yang aktif berdasarkan posisi scroll
-    const newIndex = Math.floor(scrollPosition / window.innerHeight);
 
-    // Pastikan slide index berada dalam batas jumlah slide yang ada
+    // Menghitung slide berdasarkan posisi scroll
+    const newIndex = Math.floor(scrollPosition / window.innerHeight);  // Slide 0, 1, 2 dst.
+    
+    // Menghindari perubahan slide yang tidak perlu
     if (newIndex < slides.length && newIndex !== currentIndex) {
         currentIndex = newIndex;
         changeSlide(currentIndex);
