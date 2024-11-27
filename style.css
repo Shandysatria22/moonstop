@@ -16,6 +16,14 @@ body {
   transition: transform 0.5s ease-in-out;
 }
 
+#hero1 h1 {
+  font-family: 'Milky Story', sans-serif;
+  font-size: 52px; /* Ukuran font 52px */
+  font-weight: normal;
+  text-align: center;
+}
+
+
 #hero1 { background-image: url('images/banner-1.png'); }
 #hero2 { background-image: url('images/banner-2.png'); }
 #hero3 { background-image: url('images/banner-3.png'); }
