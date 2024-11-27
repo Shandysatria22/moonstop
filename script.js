@@ -1,29 +1,14 @@
-// Mendapatkan semua elemen dengan class 'banner'
-const banners = document.querySelectorAll('.banner');
-let currentIndex = 0;  // Index banner yang aktif
+// script.js
+document.addEventListener("scroll", function() {
+    let scrollPosition = window.scrollY;
+    let heroSection = document.querySelector(".hero");
 
-// Fungsi untuk mengubah banner berdasarkan index
-function changeBanner(index) {
-    // Menghapus class 'active' dari semua banner
-    banners.forEach((banner) => {
-        banner.classList.remove('active');
-    });
-
-    // Menambahkan class 'active' pada banner yang dipilih
-    banners[index].classList.add('active');
-}
-
-// Menangani scroll
-window.addEventListener('scroll', () => {
-    // Menghitung posisi scroll saat ini
-    const scrollPosition = window.scrollY;
-
-    // Menghitung banner berdasarkan posisi scroll
-    const newIndex = Math.floor(scrollPosition / window.innerHeight);  // Slide 0, 1, 2 dst.
-    
-    // Menghindari perubahan banner yang tidak perlu
-    if (newIndex < banners.length && newIndex !== currentIndex) {
-        currentIndex = newIndex;
-        changeBanner(currentIndex);
+    // Tentukan perubahan gambar banner berdasarkan scroll
+    if (scrollPosition < 500) {
+        heroSection.style.backgroundImage = "url('images/banner-1.png')";
+    } else if (scrollPosition >= 500 && scrollPosition < 1000) {
+        heroSection.style.backgroundImage = "url('images/banner-2.png')";
+    } else if (scrollPosition >= 1000) {
+        heroSection.style.backgroundImage = "url('images/banner-3.png')";
     }
 });
