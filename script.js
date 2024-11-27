@@ -31,6 +31,7 @@ const heroSection = document.querySelector('.hero');
 
 function changeBannerOnScroll() {
     const scrollPosition = window.scrollY;
+    console.log("Scroll Position: " + scrollPosition);  // Cek posisi scroll
     let bannerIndex = 0;
 
     if (scrollPosition > 1000) {
