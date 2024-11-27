@@ -6,8 +6,8 @@ dots.forEach((dot, index) => {
   dot.addEventListener('click', () => {
     currentSectionIndex = index;
     scrollToSection(currentSectionIndex);
-    updateActiveDot();
   });
+  dot.setAttribute('aria-label', `Go to section ${index + 1}`); // Added aria-label
 });
 
 function scrollToSection(index) {
@@ -19,20 +19,12 @@ function scrollToSection(index) {
 
 function updateActiveDot() {
   dots.forEach((dot, index) => {
-    dot.classList.remove('active');
-    if (index === currentSectionIndex) {
-      dot.classList.add('active');
-    }
+    dot.classList.toggle('active', index === currentSectionIndex);
   });
 }
 
 
 window.addEventListener('wheel', function(event) {
-    if (event.deltaY > 0) {
-        currentSectionIndex = (currentSectionIndex + 1) % heroSections.length;
-        scrollToSection(currentSectionIndex);
-    } else {
-        currentSectionIndex = (currentSectionIndex - 1 + heroSections.length) % heroSections.length;
-        scrollToSection(currentSectionIndex);
-    }
+  currentSectionIndex = event.deltaY > 0 ? (currentSectionIndex + 1) % heroSections.length : (currentSectionIndex - 1 + heroSections.length) % heroSections.length;
+  scrollToSection(currentSectionIndex);
 });
