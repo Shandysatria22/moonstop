@@ -1,7 +1,7 @@
-const slides = document.querySelectorAll('.slide');  // Mengambil semua elemen slide
-let currentIndex = 0;  // Slide pertama yang aktif
+const slides = document.querySelectorAll('.slide');  // Mengambil semua slide
+let currentIndex = 0;  // Indeks slide yang aktif
 
-// Fungsi untuk mengubah slide
+// Fungsi untuk mengganti slide
 function changeSlide(index) {
     // Hapus kelas 'active' dari semua slide
     slides.forEach((slide) => {
@@ -13,16 +13,16 @@ function changeSlide(index) {
     console.log("Current Slide Index:", index);  // Debugging untuk melihat indeks saat ini
 }
 
-// Mengatur scroll untuk mengganti slide
+// Menangani event scroll
 window.addEventListener('scroll', () => {
-    // Hitung posisi scroll
+    // Hitung posisi scroll dalam piksel
     const scrollPosition = window.scrollY;
-
-    // Menentukan slide yang aktif berdasarkan posisi scroll
-    // Misalnya, setiap 1000px scroll, kita pindah ke slide berikutnya
+    
+    // Hitung slide yang aktif berdasarkan posisi scroll
+    // Misalnya, kita akan mengubah slide setiap 100vh scroll
     const newIndex = Math.floor(scrollPosition / window.innerHeight);
 
-    // Pastikan tidak lebih dari jumlah slide yang ada
+    // Pastikan slide index berada dalam batas jumlah slide yang ada
     if (newIndex < slides.length && newIndex !== currentIndex) {
         currentIndex = newIndex;
         changeSlide(currentIndex);
