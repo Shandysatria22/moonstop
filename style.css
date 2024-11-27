@@ -16,34 +16,27 @@ body {
     transition: transform 0.5s ease-in-out;
   }
   
-  #hero1 {
-    background-image: url('images/banner-1.png'); /* Perhatikan 'images/' di depan */
-  }
+  #hero1 { background-image: url('images/hero1.jpg'); }
+  #hero2 { background-image: url('images/hero2.jpg'); }
+  #hero3 { background-image: url('images/hero3.jpg'); }
   
-  #hero2 {
-    background-image: url('images/banner-2.png'); /* Perhatikan 'images/' di depan */
-  }
   
-  #hero3 {
-    background-image: url('images/banner-3.png'); /* Perhatikan 'images/' di depan */
-  }
-
-  /* ... (kode CSS sebelumnya) ... */
-
-.navigation {
+  .navigation {
     position: fixed;
     bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+    right: 20px; /* Posisi di kanan */
     display: flex;
+    flex-direction: column; /* Titik-titik vertikal */
+    align-items: flex-end; /* Ratakan titik ke kanan */
   }
   
   .dot {
-    width: 10px;
-    height: 10px;
+    width: 15px;
+    height: 15px;
     background-color: #ccc;
+    border: 1px solid #999; /* Tambahkan border */
     border-radius: 50%;
-    margin: 0 5px;
+    margin-bottom: 5px; /* Jarak antar titik */
     cursor: pointer;
   }
   
