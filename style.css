@@ -23,7 +23,7 @@ body {
   
   .navigation {
     position: fixed;
-    bottom: 400px;
+    bottom: 300px;
     left: 20px; /* Posisi di kiri */
     display: flex;
     flex-direction: column; /* Titik-titik vertikal */
