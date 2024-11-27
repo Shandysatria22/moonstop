@@ -1,203 +1,211 @@
-/* Reset some basic styles */
+/* Reset Beberapa Styling Default */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body */
 body {
     font-family: Arial, sans-serif;
+    line-height: 1.6;
     background-color: #f4f4f4;
-    color: #333;
 }
 
+/* Container untuk Mempersempit Konten */
 .container {
-    width: 90%;
-    margin: 0 auto;
-}
-
-/* Header Styling */
-header {
-    background-color: #333;
-    color: white;
-    padding: 20px 0;
-}
-
-header h1 {
-    text-align: center;
-}
-
-nav ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* Sections Styling */
-section {
-    padding: 50px 0;
-    text-align: center;
-}
-
-section#home {
-    background-color: #007bff;
-    color: white;
-}
-
-section#about, section#services, section#contact {
-    background-color: #f8f8f8;
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
-}
-
-/* Animasi fade-in */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-/* Terapkan animasi fade-in pada section */
-section {
-    animation: fadeIn 2s ease-in-out;
-}
-
-/* Animasi slide-in */
-@keyframes slideIn {
-    0% {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-/* Terapkan animasi slide-in pada section */
-section {
-    animation: slideIn 1.5s ease-out;
-}
-
-/* Animasi hover pada navigasi */
-nav ul li a {
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: #007bff; /* Mengubah warna link saat hover */
-    transform: scale(1.1); /* Sedikit perbesar ukuran link saat hover */
-}
-
-/* Efek animasi fade-in saat scroll */
-section.animate {
-    animation: fadeIn 2s ease-in-out forwards; /* Menerapkan animasi fade-in */
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-button:hover {
-    animation: pulse 1s infinite; /* Efek pulse pada button */
-}
-
-/* Header */
-header {
-    background-color: #333;
-    color: white;
-    padding: 20px 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-}
-
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
+/* Header */
+header {
+    background-color: #333;
+    padding: 20px 0;
+    color: white;
+}
+
 header .logo h1 {
-    font-size: 24px;
+    margin: 0;
+    font-size: 2rem;
 }
 
-nav ul {
+header nav ul {
     list-style-type: none;
-    display: flex;
+    text-align: right;
 }
 
-nav ul li {
-    margin: 0 20px;
+header nav ul li {
+    display: inline-block;
+    margin-left: 20px;
 }
 
-nav ul li a {
+header nav ul li a {
     color: white;
     text-decoration: none;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
-nav ul li a:hover {
-    color: #007bff; /* Ganti warna saat hover */
-}
-
-/* Hero Section */
-/* Hero Section */
+/* Hero Section - Banner pertama */
 .hero {
-    background-image: url('images/Banner 1.png'); /* Gambar default */
+    background-image: url('images/Banner 1.png');
     background-size: cover;
     background-position: center;
-    height: 100vh; /* Ukuran penuh layar */
+    height: 100vh; /* Full screen height */
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: white;
-    transition: background-image 0.5s ease-in-out; /* Transisi halus saat mengganti gambar */
+    position: relative;
 }
 
-/* Section lain */
-#about, #services, #contact {
-    padding: 60px 0;
-    background-color: #f4f4f4;
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
 }
 
-footer {
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.hero .cta-button {
+    padding: 12px 30px;
+    background-color: #ff6347;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.hero .cta-button:hover {
+    background-color: #e55347;
+}
+
+/* Section dengan Banner */
+section {
+    padding: 100px 0;
+    background-size: cover;
+    background-position: center;
+    color: white;
     text-align: center;
-    padding: 20px 0;
+}
+
+.section-about {
+    background-image: url('images/Banner 2.png');
+}
+
+.section-services {
+    background-image: url('images/Banner 3.png');
+}
+
+.section-contact {
+    background-image: url('images/Banner 4.png');
+}
+
+/* Styling untuk Konten dalam Setiap Section */
+section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+section p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+/* About Section */
+#about {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+#about .container {
+    background-color: white;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Services Section */
+#services {
+    background-color: #eeeeee;
+}
+
+#services .container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#services h2 {
+    font-size: 2rem;
+}
+
+/* Contact Section */
+#contact {
     background-color: #333;
     color: white;
+}
+
+#contact .container {
+    background-color: #444;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    header nav ul {
+        text-align: center;
+    }
+
+    header nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    section h2 {
+        font-size: 1.8rem;
+    }
+
+    section p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        font-size: 1rem;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+    }
 }
