@@ -1,74 +1,8 @@
-/* Global Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  font-family: 'Arial', sans-serif;
   margin: 0;
   overflow-x: hidden;
 }
 
-/* Hero Banner Styling */
-.hero-banner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f2e4d3; /* Warna latar belakang */
-  background-image: url('images/hero-background.jpg'); /* Ganti dengan gambar background */
-  background-size: cover;
-  background-position: center;
-  text-align: center;
-  position: relative;
-}
-
-.hero-content {
-  color: #000;
-  z-index: 1;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Memberikan efek bayangan pada teks */
-}
-
-h1, h2, h3 {
-  font-weight: bold;
-  margin: 10px 0;
-}
-
-h1 {
-  font-size: 80px;
-  letter-spacing: 4px;
-}
-
-h2 {
-  font-size: 50px;
-  letter-spacing: 3px;
-}
-
-h3 {
-  font-size: 40px;
-  letter-spacing: 2px;
-}
-
-.cta-button {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 15px 30px;
-  font-size: 18px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #fff;
-  background-color: #007bff;
-  border-radius: 30px;
-  transition: background-color 0.3s;
-}
-
-.cta-button:hover {
-  background-color: #0056b3;
-}
-
-/* Hero Sections Styling */
 .hero-section {
   height: 100vh;
   width: 100%;
@@ -86,7 +20,6 @@ h3 {
 #hero2 { background-image: url('images/banner-2.png'); }
 #hero3 { background-image: url('images/banner-3.png'); }
 
-/* Navigation Styling */
 .navigation {
   position: fixed;
   top: 50%;
@@ -102,7 +35,7 @@ h3 {
   border-radius: 50%;
   margin: 10px 0;
   cursor: pointer;
-  border: 2px solid #333;
+  border: 2px solid var(--black-2);
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -113,71 +46,45 @@ h3 {
   content: "";
   width: 6px;
   height: 6px;
-  background-color: #333;
+  background-color: var(--black-2);
   border-radius: 50%;
 }
 
 .dot.active {
-  border-color: #007bff;
-  background-color: #007bff;
+  border-color: var(--primary-color);
+  background-color: var(--primary-color);
 }
 
 .dot.active::before {
   background-color: white;
 }
 
-/* Animasi Fade-In */
-.hero-content h1, .hero-content h2, .hero-content h3 {
-  opacity: 0;
-  animation: fadeIn 1.5s forwards;
+:root {
+  --black-2: #333;
+  --primary-color: #007bff;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Media Queries for Responsiveness */
+/* Media Query for Responsiveness (Adjust as needed) */
 @media (max-width: 768px) {
-  h1 {
-    font-size: 60px;
+  .navigation {
+    right: 10px;
   }
-  h2 {
-    font-size: 40px;
+  .dot {
+    width: 15px;
+    height: 15px;
+    margin: 5px 0;
   }
-  h3 {
-    font-size: 30px;
-  }
-  .cta-button {
-    padding: 10px 20px;
-    font-size: 16px;
+  .dot::before {
+    width: 4px;
+    height: 4px;
   }
 }
 
+/* Style untuk logo */
 #website-logo {
-  position: fixed; /* Gunakan fixed untuk memastikan sticky efek */
-  top: 20px;       /* Jarak dari atas */
-  left: 20px;      /* Jarak dari kiri */
-  width: 120px;    /* Ukuran logo */
-  height: auto;    
-  background-color: transparent; /* Tetap transparan */
-  z-index: 1000;   /* Supaya tetap di atas elemen lain */
-}
-
-body, html {
-  overflow: auto; /* Pastikan scroll tetap berfungsi */
-}
-
-@media (max-width: 768px) {
-  #website-logo {
-    width: 80px;  /* Sesuaikan ukuran di layar kecil */
-    top: 10px;
-    left: 10px;
-  }
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 10px;
+  margin-bottom: 10px;
 }
