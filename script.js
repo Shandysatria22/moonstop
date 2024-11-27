@@ -27,26 +27,30 @@ const banners = [
     'images/banner-3.png'   // Gambar ketiga (misal)
 ];
 
+// Mencari elemen hero
 const heroSection = document.querySelector('.hero');
 
+// Fungsi untuk mengubah banner saat scroll
 function changeBannerOnScroll() {
     const scrollPosition = window.scrollY;
     console.log("Scroll Position: " + scrollPosition);  // Cek posisi scroll
     let bannerIndex = 0;
 
-    // Mengubah gambar sesuai dengan posisi scroll
-    if (scrollPosition > 200) {
+    // Ganti gambar berdasarkan scroll
+    if (scrollPosition > 500) {
         bannerIndex = 1;  // Ganti ke banner 2 setelah scroll > 500px
     }
-    if (scrollPosition > 800) {
+    if (scrollPosition > 1500) {
         bannerIndex = 2;  // Ganti ke banner 3 setelah scroll > 1500px
     }
 
-    console.log("Banner Index: " + bannerIndex);  // Cek index gambar yang akan digunakan
+    // Periksa dan ubah gambar background hero
     if (heroSection) {
         heroSection.style.backgroundImage = `url(${banners[bannerIndex]})`;
     }
 }
+
+// Menambahkan event listener untuk scroll
 window.addEventListener('scroll', changeBannerOnScroll);
 
 

@@ -174,8 +174,9 @@ nav ul li a:hover {
     color: #007bff; /* Ganti warna saat hover */
 }
 
+/* Hero Section */
 .hero {
-    background-image: url('images/banner-1.png'); /* Gambar default */
+    background-image: url('images/Banner 1.png'); /* Gambar default */
     background-size: cover;
     background-position: center;
     height: 100vh; /* Ukuran penuh layar */
@@ -186,6 +187,13 @@ nav ul li a:hover {
     color: white;
     transition: background-image 0.5s ease-in-out; /* Transisi halus saat mengganti gambar */
 }
+
+/* Section lain */
+#services {
+    padding: 60px 0;
+    background-color: #f4f4f4;
+}
+
 
 
 
