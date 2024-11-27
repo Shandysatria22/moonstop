@@ -1,3 +1,5 @@
+@import url('https://fonts.cdnfonts.com/css/story-milky');
+
 body {
   margin: 0;
   overflow-x: hidden;
@@ -17,7 +19,7 @@ body {
 }
 
 #hero1 h1 {
-  font-family: 'Milky Story', sans-serif;
+  font-family: 'Story Milky', sans-serif; /* Menggunakan font Story Milky */
   font-size: 52px; /* Ukuran font 52px */
   font-weight: normal;
   text-align: center;
@@ -88,11 +90,25 @@ body {
   }
 }
 
-/* Style untuk logo */
 #website-logo {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  padding: 10px;
-  margin-bottom: 10px;
+  position: fixed; /* Gunakan fixed untuk memastikan sticky efek */
+  top: 20px;       /* Jarak dari atas */
+  left: 20px;      /* Jarak dari kiri */
+  width: 120px;    /* Ukuran logo */
+  height: auto;    
+  background-color: transparent; /* Tetap transparan */
+  z-index: 1000;   /* Supaya tetap di atas elemen lain */
 }
+
+body, html {
+  overflow: auto; /* Pastikan scroll tetap berfungsi */
+}
+
+@media (max-width: 768px) {
+  #website-logo {
+    width: 80px;  /* Sesuaikan ukuran di layar kecil */
+    top: 10px;
+    left: 10px;
+  }
+}
+
