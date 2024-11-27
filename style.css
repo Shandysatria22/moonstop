@@ -64,3 +64,66 @@ footer {
     padding: 10px 0;
     text-align: center;
 }
+
+/* Animasi fade-in */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Terapkan animasi fade-in pada section */
+section {
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Animasi slide-in */
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Terapkan animasi slide-in pada section */
+section {
+    animation: slideIn 1.5s ease-out;
+}
+
+/* Animasi hover pada navigasi */
+nav ul li a {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #007bff; /* Mengubah warna link saat hover */
+    transform: scale(1.1); /* Sedikit perbesar ukuran link saat hover */
+}
+
+/* Efek animasi fade-in saat scroll */
+section.animate {
+    animation: fadeIn 2s ease-in-out forwards; /* Menerapkan animasi fade-in */
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+button:hover {
+    animation: pulse 1s infinite; /* Efek pulse pada button */
+}
