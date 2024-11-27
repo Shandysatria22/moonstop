@@ -175,17 +175,20 @@ nav ul li a:hover {
 }
 
 /* Hero Section */
+/* Hero Section */
 .hero {
-    background-image: url('your-image.jpg'); /* Ganti dengan gambar latar belakang */
+    background-image: url('images/banner1.jpg'); /* Gambar default */
     background-size: cover;
     background-position: center;
-    height: 100vh; /* Full-screen hero section */
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: white;
+    transition: background-image 0.5s ease-in-out; /* Transisi halus saat mengganti gambar */
 }
+
 
 .hero h2 {
     font-size: 48px;
