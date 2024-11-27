@@ -20,22 +20,6 @@ header .logo h1 {
     margin: 0;
 }
 
-header nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-header nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-header nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-/* Hero Section (Banner) */
 .hero {
     height: 100vh; /* Full screen height */
     display: flex;
@@ -43,7 +27,6 @@ header nav ul li a {
     align-items: center;
     color: #fff;
     transition: background-image 1s ease-in-out;
-    background-image: url('images/banner-1.png'); /* Default image */
     background-size: cover;
     background-position: center;
 }
@@ -57,15 +40,8 @@ header nav ul li a {
     font-size: 1.5rem;
 }
 
-/* About Section */
+/* Section lainnya */
 #about {
     padding: 60px 0;
     background-color: #f4f4f4;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
 }
