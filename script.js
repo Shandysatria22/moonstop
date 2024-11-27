@@ -1,14 +1,17 @@
-// script.js
-document.addEventListener("scroll", function() {
-    let scrollPosition = window.scrollY;
-    let heroSection = document.querySelector(".hero");
-
-    // Tentukan perubahan gambar berdasarkan scroll
-    if (scrollPosition < 500) {
-        heroSection.style.backgroundImage = "url('images/banner1.png')";
-    } else if (scrollPosition >= 500 && scrollPosition < 1000) {
-        heroSection.style.backgroundImage = "url('images/banner2.png')";
-    } else if (scrollPosition >= 1000) {
-        heroSection.style.backgroundImage = "url('images/banner3.png')";
-    }
-});
+window.addEventListener('scroll', function() {
+    let scrollPosition = window.pageYOffset;
+    let windowHeight = window.innerHeight;
+    let heroSections = document.querySelectorAll('.hero-section');
+  
+    heroSections.forEach(section => {
+      let sectionTop = section.offsetTop;
+      let sectionHeight = section.offsetHeight;
+      let sectionMiddle = sectionTop + sectionHeight / 2;
+  
+      if (scrollPosition >= sectionMiddle - windowHeight / 2 && scrollPosition < sectionMiddle + windowHeight / 2) {
+          section.style.transform = 'scale(1.1)'; // Efek skala saat aktif
+      } else {
+          section.style.transform = 'scale(1)';
+      }
+    });
+  });
