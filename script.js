@@ -1,28 +1,29 @@
-const slides = document.querySelectorAll('.slide');
-let currentIndex = 0;  // Index slide yang aktif
+// Mendapatkan semua elemen dengan class 'banner'
+const banners = document.querySelectorAll('.banner');
+let currentIndex = 0;  // Index banner yang aktif
 
-// Fungsi untuk mengubah slide
-function changeSlide(index) {
-    // Menghapus kelas 'active' dari semua slide
-    slides.forEach((slide) => {
-        slide.classList.remove('active');
+// Fungsi untuk mengubah banner berdasarkan index
+function changeBanner(index) {
+    // Menghapus class 'active' dari semua banner
+    banners.forEach((banner) => {
+        banner.classList.remove('active');
     });
 
-    // Menambahkan kelas 'active' pada slide yang dipilih
-    slides[index].classList.add('active');
+    // Menambahkan class 'active' pada banner yang dipilih
+    banners[index].classList.add('active');
 }
 
-// Event listener untuk scroll
+// Menangani scroll
 window.addEventListener('scroll', () => {
     // Menghitung posisi scroll saat ini
     const scrollPosition = window.scrollY;
 
-    // Menghitung slide berdasarkan posisi scroll
+    // Menghitung banner berdasarkan posisi scroll
     const newIndex = Math.floor(scrollPosition / window.innerHeight);  // Slide 0, 1, 2 dst.
     
-    // Menghindari perubahan slide yang tidak perlu
-    if (newIndex < slides.length && newIndex !== currentIndex) {
+    // Menghindari perubahan banner yang tidak perlu
+    if (newIndex < banners.length && newIndex !== currentIndex) {
         currentIndex = newIndex;
-        changeSlide(currentIndex);
+        changeBanner(currentIndex);
     }
 });

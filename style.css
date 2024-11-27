@@ -12,37 +12,40 @@ body {
 /* Hero Section */
 .hero-section {
     position: relative;
-    height: 300vh;  /* Membuat halaman lebih tinggi supaya bisa di-scroll */
+    height: 100vh;  /* Satu layar penuh */
     overflow: hidden;
 }
 
-.slide {
+/* Banner styles */
+.banner {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh; /* Setiap slide menempati satu layar penuh */
+    height: 100%;  /* Setiap banner menempati satu layar penuh */
     opacity: 0;
     transition: opacity 1s ease-in-out; /* Transisi untuk perubahan opacity */
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
-}
-
-.slide.active {
-    opacity: 1;  /* Slide aktif akan terlihat */
+    text-align: center;
 }
 
 /* Gaya untuk masing-masing slide (background warna berbeda) */
-.slide:nth-child(1) {
+.banner:nth-child(1) {
     background-color: #f44336;
 }
 
-.slide:nth-child(2) {
+.banner:nth-child(2) {
     background-color: #4CAF50;
 }
 
-.slide:nth-child(3) {
+.banner:nth-child(3) {
     background-color: #2196F3;
+}
+
+/* Active class untuk slide yang muncul */
+.banner.active {
+    opacity: 1;
 }
