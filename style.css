@@ -178,7 +178,7 @@ nav ul li a:hover {
     background-image: url('images/banner-1.png'); /* Gambar default */
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    height: 100vh; /* Ukuran penuh layar */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -186,6 +186,7 @@ nav ul li a:hover {
     color: white;
     transition: background-image 0.5s ease-in-out; /* Transisi halus saat mengganti gambar */
 }
+
 
 
 
