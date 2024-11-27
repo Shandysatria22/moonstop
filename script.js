@@ -1,16 +1,8 @@
 const slides = document.querySelectorAll('.slide');
 let currentIndex = 0;
 
-window.addEventListener('wheel', (event) => {
-    if (event.deltaY > 0) {
-        changeSlide(currentIndex + 1); // Scroll ke bawah
-    } else {
-        changeSlide(currentIndex - 1); // Scroll ke atas
-    }
-});
-
 function changeSlide(index) {
-    const totalSlides = slides.length; // Hanya 3 slide
+    const totalSlides = slides.length; // Harus 3
 
     if (index < 0) {
         currentIndex = 0;
@@ -20,9 +12,18 @@ function changeSlide(index) {
         currentIndex = index;
     }
 
-    console.log("Current Slide Index:", currentIndex); // Debug
+    console.log("Current Slide Index:", currentIndex); // Debug Index
 
     slides.forEach((slide, i) => {
         slide.classList.toggle('active', i === currentIndex);
+        console.log(`Slide ${i} Active: ${i === currentIndex}`); // Debug kelas active
     });
 }
+
+window.addEventListener('wheel', (event) => {
+    if (event.deltaY > 0) {
+        changeSlide(currentIndex + 1); // Scroll down
+    } else {
+        changeSlide(currentIndex - 1); // Scroll up
+    }
+});
