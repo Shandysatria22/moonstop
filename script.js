@@ -1,4 +1,7 @@
+// Menyimpan referensi ke semua slide dalam array
+const slides = document.querySelectorAll('.slide');  // Pastikan ada 3 slide
 let currentIndex = 0;
+
 
 function changeSlide(index) {
     slides.forEach((slide, i) => {
