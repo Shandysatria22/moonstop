@@ -12,7 +12,7 @@ dots.forEach((dot, index) => {
 
 function scrollToSection(index) {
   if (index >= 0 && index < heroSections.length) {
-    heroSections[index].scrollIntoView({ behavior: 'smooth' }); // 'smooth' untuk animasi halus
+    heroSections[index].scrollIntoView({ behavior: 'smooth' });
     updateActiveDot();
   }
 }
@@ -25,12 +25,6 @@ function updateActiveDot() {
     }
   });
 }
-
-// Otomatis pindah ke section selanjutnya (opsional)
-setInterval(() => {
-    currentSectionIndex = (currentSectionIndex + 1) % heroSections.length;
-    scrollToSection(currentSectionIndex);
-}, 5000); // Ubah 5000 (milidetik) untuk mengatur interval waktu
 
 
 window.addEventListener('wheel', function(event) {
