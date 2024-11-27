@@ -80,57 +80,60 @@ body {
     }
   }
 
-/* Gaya untuk header */
-header {
-    background-color: transparent; 
+
+  header {
+    background-color: #f2f2f2;
     padding: 20px;
-    position: sticky; 
-    top: 0; 
-    z-index: 1000; 
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    
     display: flex;
-    justify-content: space-between; 
-    align-items: center; 
+    justify-content: space-between;
+    align-items: center;
   }
   
-  /* Logo Website */
+
   .logo {
-    width: 100px; 
+    width: 100px;
     height: auto;
-    cursor: pointer;
+
   }
-  .logo img{
+  
+  .logo img {
     width: 100%;
     height: auto;
+    display: block;
   }
   
-  /* Ikon Hamburger */
+
   #menu-toggle {
-    display: none; /* Checkbox disembunyikan */
+    display: none;
   }
   
   .menu-icon {
-    display: block; /* Ikon hamburger ditampilkan */
+    display: block;
     cursor: pointer;
-    width: 30px; /* Lebar ikon */
-    height: auto; /* Tinggi menyesuaikan gambar */
+    width: 40px;
+    height: auto;
     margin-right: 20px;
     position: relative;
   }
   
   .menu-icon img {
-      display: block; /* Pastikan gambar ditampilkan */
-      width: 100%; /* Gambar memenuhi lebar container */
-      height: auto; /* Tinggi otomatis, mempertahankan rasio aspek */
+    display: block;
+    width: 100%;
+    height: auto;
   }
   
   nav {
-    display: none; 
+    display: none;
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: #fff; 
-    z-index: 100;  
+    background-color: #fff;
+    z-index: 100;
   }
   
   nav ul {
@@ -151,22 +154,22 @@ header {
     color: #333;
   }
   
-  /* Gaya untuk menu saat dibuka */
+
   #menu-toggle:checked ~ nav {
-    display: block; 
+    display: block;
   }
   
-  /* Media query untuk layar lebih lebar */
+  
   @media (min-width: 768px) {
     .menu-icon {
-      display: none; 
+      display: none;
     }
     nav {
       position: relative;
       top: auto;
       background-color: transparent;
       width: auto;
-      text-align: right; 
+      text-align: right;
       display: flex;
     }
     nav ul {
