@@ -20,16 +20,9 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Daftar gambar untuk background yang akan digunakan
-const banners = [
-    'images/banner 1.jpg', // Gambar pertama
-    'images/banner 2.jpg', // Gambar kedua
-    'images/banner 3.jpg'  // Gambar ketiga
-];
-
 // Dapatkan hero section
 // Daftar gambar untuk background yang akan digunakan
-const banner = [
+const banners = [
     'images/banner 1.jpg', // Gambar pertama
     'images/banner 2.jpg', // Gambar kedua
     'images/banner 3.jpg'  // Gambar ketiga
