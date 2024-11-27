@@ -1,13 +1,17 @@
-body {
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     font-family: Arial, sans-serif;
-    overflow: hidden; /* Mencegah scroll browser default */
 }
 
 .hero-section {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 300vh; /* Pastikan cukup tinggi untuk scroll */
     overflow: hidden;
 }
 
@@ -16,40 +20,25 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    opacity: 0; /* Slide tidak aktif transparan */
+    height: 100vh; /* Setiap slide memiliki tinggi 100% dari viewport */
+    opacity: 0;  /* Semua slide mulai dengan opacity 0 */
     z-index: 0;
-    transition: opacity 1s ease, transform 1s ease;
+    transition: opacity 1s ease-in-out;
 }
 
 .slide.active {
-    opacity: 1; /* Slide aktif muncul */
+    opacity: 1;  /* Slide yang aktif menjadi terlihat */
     z-index: 1;
 }
 
 .slide:nth-child(1) {
-    background: url('images/banner-1.png') no-repeat center center/cover;
+    background-color: red;
 }
 
 .slide:nth-child(2) {
-    background: url('images/banner-2.png') no-repeat center center/cover;
+    background-color: green;
 }
 
 .slide:nth-child(3) {
-    background: url('images/banner-3.png') no-repeat center center/cover;
-}
-
-
-.cta-button {
-    background-color: #ff6347;
-    padding: 10px 20px;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
-}
-
-.cta-button:hover {
-    background-color: #e55347;
+    background-color: blue;
 }

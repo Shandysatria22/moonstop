@@ -17,9 +17,9 @@ function changeSlide(index) {
 window.addEventListener('scroll', () => {
     // Hitung posisi scroll dalam piksel
     const scrollPosition = window.scrollY;
+    console.log("Scroll Position:", scrollPosition);  // Debugging untuk melihat posisi scroll
     
     // Hitung slide yang aktif berdasarkan posisi scroll
-    // Misalnya, kita akan mengubah slide setiap 100vh scroll
     const newIndex = Math.floor(scrollPosition / window.innerHeight);
 
     // Pastikan slide index berada dalam batas jumlah slide yang ada
