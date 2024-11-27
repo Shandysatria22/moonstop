@@ -79,3 +79,98 @@ body {
       height: 4px;
     }
   }
+
+  /* Hamburger Menu Styles */
+#menu-toggle {
+    display: none;
+  }
+  
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+    width: 30px;
+    height: 20px;
+    margin-left: 20px; /* Adjust spacing as needed */
+    position: relative; /* Untuk bar */
+  }
+  
+  .menu-icon .bar {
+    background-color: #333;
+    width: 100%;
+    height: 3px;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+    position: absolute;
+    left: 0;
+  }
+  
+  #menu-toggle:checked + .menu-icon .bar:nth-child(1) {
+    transform: translateY(8px) rotate(-45deg);
+  }
+  
+  #menu-toggle:checked + .menu-icon .bar:nth-child(2) {
+    opacity: 0;
+  }
+  
+  #menu-toggle:checked + .menu-icon .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(45deg);
+  }
+  
+  
+  nav {
+    display: block; /* Tampilkan menu secara default */
+    position: absolute;
+    top: 100%; /* Menu di bawah header */
+    left: 0;
+    width: 100%;
+    background-color: #fff; /* Warna latar belakang menu */
+    z-index: 100;  /* Ensure menu is on top */
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 10px 0;
+    text-align: center;
+  }
+  
+  nav li {
+    margin: 10px 0;
+  }
+  
+  nav a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  
+  /* Gaya saat menu dibuka (checked) */
+  #menu-toggle:checked ~ nav {
+    display: block;
+  }
+  
+  
+  @media (min-width: 768px) {
+    /* Hide menu for larger screens */
+    .menu-icon {
+      display: none;
+    }
+    nav {
+      position: relative; /* No longer absolute */
+      top: auto;
+      background-color: transparent; /* Make the menu transparent on larger screen */
+      width: auto; /* Make it adaptive */
+      text-align: center;
+    }
+    nav ul {
+      display: inline-block; /* Make menu items inline */
+      padding: 0;
+    }
+    nav li {
+      display: inline-block;
+      margin: 0 10px;
+    }
+  
+  }
