@@ -43,7 +43,7 @@ header nav ul li a {
 /* Hero Section - Banner pertama */
 .hero {
     position: relative;
-    background-image: url('images/Banner1.png');
+    background-image: url('images/banner-1.png');
     background-size: cover;
     background-position: center;
     height: 100vh; /* Full screen height */
