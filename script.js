@@ -22,9 +22,9 @@ window.addEventListener('scroll', () => {
 
 // Daftar gambar untuk background yang akan digunakan
 const banners = [
-    'images/Banner 1.jpg', // Gambar pertama
-    'images/Banner 2.jpg', // Gambar kedua
-    'images/Banner 3.jpg'  // Gambar ketiga
+    'images/Banner 1.png', // Gambar pertama
+    'images/Banner 2.png', // Gambar kedua
+    'images/Banner 3.png'  // Gambar ketiga
 ];
 
 // Dapatkan hero section
