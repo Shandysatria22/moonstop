@@ -175,7 +175,7 @@ nav ul li a:hover {
 }
 
 .hero {
-    background-image: url('images/Banner 1.png'); /* Gambar default */
+    background-image: url('images/banner-1.png'); /* Gambar default */
     background-size: cover;
     background-position: center;
     height: 100vh;
