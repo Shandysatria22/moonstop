@@ -22,9 +22,9 @@ window.addEventListener('scroll', () => {
 
 // Daftar gambar untuk background yang akan digunakan
 const banners = [
-    'images/Banner 1.png',  // Gambar pertama
-    'images/Banner 2.png',  // Gambar kedua (misal)
-    'images/Banner 3.png'   // Gambar ketiga (misal)
+    'images/banner-1.png',  // Gambar pertama
+    'images/banner-2.png',  // Gambar kedua (misal)
+    'images/banner-3.png'   // Gambar ketiga (misal)
 ];
 
 const heroSection = document.querySelector('.hero');
