@@ -3,44 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+    <title>Scroll Banner Website</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="logo">
-                <h1>My Logo</h1> <!-- Ganti dengan logo Anda -->
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Hero Section - Banner dengan background yang berubah -->
-    <section id="home" class="hero">
-        <div class="overlay"></div>
-        <div class="container">
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="slide active">
             <h2>Welcome to Our Website</h2>
             <p>Your journey begins here</p>
-            <a href="#about" class="cta-button">Explore Our Services</a>
+            <a href="#" class="cta-button">Learn More</a>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 My Awesome Website. All rights reserved.</p>
+        <div class="slide">
+            <h2>About Us</h2>
+            <p>We create beautiful solutions.</p>
+            <a href="#" class="cta-button">About Us</a>
         </div>
-    </footer>
+        <div class="slide">
+            <h2>Our Services</h2>
+            <p>Explore what we offer for your success.</p>
+            <a href="#" class="cta-button">Our Services</a>
+        </div>
+        <div class="slide">
+            <h2>Contact Us</h2>
+            <p>Get in touch for more information.</p>
+            <a href="#" class="cta-button">Contact Us</a>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

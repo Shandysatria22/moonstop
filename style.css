@@ -1,119 +1,59 @@
-/* Reset Beberapa Styling Default */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-}
-
-/* Header */
-header {
-    background-color: #333;
-    padding: 20px 0;
-    color: white;
-}
-
-header .logo h1 {
     margin: 0;
-    font-size: 2rem;
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* Mencegah scroll browser default */
 }
 
-header nav ul {
-    list-style-type: none;
-    text-align: right;
-}
-
-header nav ul li {
-    display: inline-block;
-    margin-left: 20px;
-}
-
-header nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-}
-
-/* Hero Section - Banner pertama */
-.hero {
+.hero-section {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
     position: relative;
-    background-image: url('images/banner-1.png');
-    background-size: cover;
-    background-position: center;
-    height: 100vh; /* Full screen height */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    transition: background-image 0.5s ease; /* Menambahkan transisi untuk perubahan gambar */
 }
 
-/* Overlay untuk efek background yang lebih dinamis */
-.hero .overlay {
+.slide {
+    height: 100vh;
+    width: 100vw;
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Tambahkan overlay transparan */
-    z-index: 1;
-}
-
-/* Teks dan tombol di atas background */
-.hero .container {
-    position: relative;
-    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
     color: white;
 }
 
-.hero h2 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    animation: fadeIn 1s ease-out; /* Animasi fade-in untuk teks */
+.slide.active {
+    opacity: 1;
 }
 
-.hero p {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    animation: fadeIn 1.5s ease-out; /* Animasi fade-in untuk teks */
+.slide:nth-child(1) {
+    background-image: url('images/banner-1.png');
 }
 
-.hero .cta-button {
-    padding: 12px 30px;
+.slide:nth-child(2) {
+    background-image: url('images/banner-2.png');
+}
+
+.slide:nth-child(3) {
+    background-image: url('images/banner-3.png');
+}
+
+.cta-button {
     background-color: #ff6347;
+    padding: 10px 20px;
     color: white;
     text-decoration: none;
-    font-size: 1.1rem;
     border-radius: 5px;
+    margin-top: 20px;
     transition: background-color 0.3s ease;
-    animation: fadeIn 2s ease-out; /* Animasi fade-in untuk tombol */
 }
 
-.hero .cta-button:hover {
+.cta-button:hover {
     background-color: #e55347;
-}
-
-/* Efek Fade-In untuk Teks dan Tombol */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-/* Footer */
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
 }
