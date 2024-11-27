@@ -80,11 +80,29 @@ body {
   }
 }
 
+header {
+  text-align: center; /* Agar logo berada di tengah */
+  background-color: transparent; /* Atur background jika perlu */
+}
+
 /* Style untuk logo */
 #website-logo {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  padding: 10px;
-  margin-bottom: 10px;
+  position: sticky; /* Membuat logo tetap di posisi saat scroll */
+  top: 20px; /* Tetap berjarak 20px dari atas */
+  left: 20px; /* Jarak 20px dari kiri */
+  width: 120px; /* Ukuran logo */
+  height: auto;
+  background-color: transparent; /* Latar belakang transparan */
+  z-index: 1000; /* Agar tetap di atas elemen lain */
 }
+
+
+@media (max-width: 768px) {
+  #website-logo {
+    width: 80px; /* Sesuaikan ukuran lebih kecil untuk layar kecil */
+    top: 10px; /* Jarak lebih kecil dari atas */
+    left: 10px;
+  }
+}
+
+
