@@ -23,11 +23,11 @@ body {
   
   .navigation {
     position: fixed;
-    bottom: 20px;
-    right: 20px; /* Posisi di kanan */
+    bottom: 400px;
+    left: 20px; /* Posisi di kiri */
     display: flex;
     flex-direction: column; /* Titik-titik vertikal */
-    align-items: flex-end; /* Ratakan titik ke kanan */
+    align-items: center; /* Ratakan titik ke tengah */
   }
   
   .dot {
