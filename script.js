@@ -19,8 +19,11 @@ function changeSlide(index) {
     } else {
         currentIndex = index;
     }
-    
+
+    console.log("Current Slide Index:", currentIndex); // Debugging
+
     slides.forEach((slide, i) => {
         slide.classList.toggle('active', i === currentIndex);
     });
 }
+
