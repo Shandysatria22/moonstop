@@ -21,10 +21,11 @@ window.addEventListener('scroll', () => {
 });
 
 // Daftar gambar untuk background yang akan digunakan
+// Array gambar banner yang ingin diganti saat scroll
 const banners = [
-    'images/banner-1.png',  // Gambar pertama
-    'images/banner-2.png',  // Gambar kedua (misal)
-    'images/banner-3.png'   // Gambar ketiga (misal)
+    'images/banner1.png',  // Banner pertama
+    'images/banner2.png',  // Banner kedua
+    'images/banner3.png',  // Banner ketiga
 ];
 
 // Menyimpan elemen hero
@@ -36,7 +37,7 @@ function changeBannerOnScroll() {
     console.log("Scroll Position: " + scrollPosition);
 
     // Tentukan index gambar banner yang digunakan berdasarkan posisi scroll
-    let bannerIndex = Math.floor(scrollPosition / window.innerHeight);
+    let bannerIndex = Math.floor(scrollPosition / window.innerHeight);  // Setiap scroll akan menghitung berapa kali layar penuh (window.innerHeight) dilalui
 
     // Jika scroll lebih jauh dari jumlah gambar banner yang ada, reset ke gambar pertama
     if (bannerIndex >= banners.length) {
