@@ -1,93 +1,91 @@
 body {
-    margin: 0;
-    overflow-x: hidden;
-  }
-  
-  .hero-section {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-size: cover;
-    background-position: center;
-    color: white;
-    transition: transform 0.5s ease-in-out;
-  }
-  
-  #hero1 { background-image: url('images/banner-1.png'); }
-  #hero2 { background-image: url('images/banner-2.png'); }
-  #hero3 { background-image: url('images/banner-3.png'); }
-  
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.hero-section {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  transition: transform 0.5s ease-in-out;
+}
+
+#hero1 { background-image: url('images/banner-1.png'); }
+#hero2 { background-image: url('images/banner-2.png'); }
+#hero3 { background-image: url('images/banner-3.png'); }
+
+.navigation {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+}
+
+.dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 10px 0;
+  cursor: pointer;
+  border: 2px solid var(--black-2);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dot::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background-color: var(--black-2);
+  border-radius: 50%;
+}
+
+.dot.active {
+  border-color: var(--primary-color);
+  background-color: var(--primary-color);
+}
+
+.dot.active::before {
+  background-color: white;
+}
+
+:root {
+  --black-2: #333;
+  --primary-color: #007bff;
+}
+
+/* Media Query for Responsiveness (Adjust as needed) */
+@media (max-width: 768px) {
   .navigation {
-    position: fixed;
-    top: 50%; /* Center vertically */
-    right: 20px; /* Position to the right */
-    transform: translateY(-50%); /* Adjust vertical centering */
-    display: flex;
-    flex-direction: column; /* Make dots vertical */
+    right: 10px;
   }
-  
   .dot {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    margin: 10px 0; /* Adjust vertical spacing between dots */
-    cursor: pointer;
-    border: 2px solid var(--black-2);
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 15px;
+    height: 15px;
+    margin: 5px 0;
   }
+  .dot::before {
+    width: 4px;
+    height: 4px;
+  }
+}
 
-  .dot::before { 
-    content: "";
-    width: 6px;
-    height: 6px;
-    background-color: var(--black-2);
-    border-radius: 50%;
-  }
-
-
-  .dot.active {
-    border-color: var(--primary-color); 
-    background-color: var(--primary-color); 
-  }
-  .dot.active::before {
-    background-color: white; 
-  }
-
-  :root {
-    --black-2: #333;
-    --primary-color: #007bff; 
-  }
-
-  /* Media Query for Responsiveness (Adjust as needed) */
-  @media (max-width: 768px) {
-    .navigation {
-      right: 10px; /* Adjust right position for smaller screens */
-    }
-    .dot {
-      width: 15px;
-      height: 15px;
-      margin: 5px 0;
-    }
-    .dot::before {
-      width: 4px;
-      height: 4px;
-    }
-  }
-
-  .navigation {
-    /* ... kode CSS yang sudah ada ... */
-    display: flex;
-    align-items: center; /* Agar logo dan dots sejajar vertikal */
-  }
-  
-  .logo {
-    width: 50px; /* Sesuaikan ukuran logo */
-    height: auto;
-    margin-right: 20px; /* Jarak antara logo dan dots */
-  }
+/* Style untuk logo */
+#website-logo {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: transparent; /* Ubah dari opacity */
+  padding: 10px;
+  margin-bottom: 10px;
+}
