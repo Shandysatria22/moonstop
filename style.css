@@ -94,7 +94,7 @@ header {
   
   /* Logo Website */
   .logo {
-    width: 100px; /* Atur lebar logo sesuai kebutuhan */
+    width: 100px; 
     height: auto;
     cursor: pointer;
   }
@@ -105,53 +105,32 @@ header {
   
   /* Ikon Hamburger */
   #menu-toggle {
-    display: none;
+    display: none; /* Checkbox disembunyikan */
   }
   
   .menu-icon {
-    display: block;
+    display: block; /* Ikon hamburger ditampilkan */
     cursor: pointer;
-    width: 30px;
-    height: auto; /* Sesuaikan tinggi berdasarkan gambar */
+    width: 30px; /* Lebar ikon */
+    height: auto; /* Tinggi menyesuaikan gambar */
     margin-right: 20px;
     position: relative;
   }
   
   .menu-icon img {
-    width: 100%;
-    height: auto;
-  }
-  
-  .menu-icon .bar {
-    background-color: #333; /* Warna garis hamburger */
-    width: 100%;
-    height: 3px;
-    margin: 4px 0;
-    transition: all 0.3s ease; /* Animasi transisi */
-    position: absolute;
-    left: 0;
-  }
-  
-  #menu-toggle:checked + .menu-icon .bar:nth-child(1) {
-    transform: translateY(8px) rotate(-45deg); /* Rotasi garis atas */
-  }
-  
-  #menu-toggle:checked + .menu-icon .bar:nth-child(2) {
-    opacity: 0; /* Sembunyikan garis tengah */
-  }
-  
-  #menu-toggle:checked + .menu-icon .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(45deg); /* Rotasi garis bawah */
+      display: block; /* Pastikan gambar ditampilkan */
+      width: 100%; /* Gambar memenuhi lebar container */
+      height: auto; /* Tinggi otomatis, mempertahankan rasio aspek */
   }
   
   nav {
-    display: none; /* Sembunyikan menu saat awal */
+    display: none; 
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: #fff; /* Warna latar belakang menu */
-    z-index: 100;
+    background-color: #fff; 
+    z-index: 100;  
   }
   
   nav ul {
@@ -172,31 +151,30 @@ header {
     color: #333;
   }
   
+  /* Gaya untuk menu saat dibuka */
   #menu-toggle:checked ~ nav {
-    display: block;
-}
-/* Media query untuk layar lebih lebar (sembunyikan hamburger, tampilkan menu biasa) */
-@media (min-width: 768px) {
-  .menu-icon {
-    display: none; 
+    display: block; 
   }
-  nav {
-    position: relative;
-    top: auto;
-    background-color: transparent;
-    width: auto;
-    text-align: right; 
-    display: flex;
+  
+  /* Media query untuk layar lebih lebar */
+  @media (min-width: 768px) {
+    .menu-icon {
+      display: none; 
+    }
+    nav {
+      position: relative;
+      top: auto;
+      background-color: transparent;
+      width: auto;
+      text-align: right; 
+      display: flex;
+    }
+    nav ul {
+      display: flex;
+      padding: 0;
+    }
+    nav li {
+      display: inline-block;
+      margin: 0 10px;
+    }
   }
-  nav ul {
-    display: flex;
-    padding: 0;
-  }
-  nav li {
-    display: inline-block;
-    margin: 0 10px;
-  }
-  .logo {
-    margin-right: 20px;
-  }
-}
