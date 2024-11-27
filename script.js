@@ -28,6 +28,14 @@ const banners = [
 ];
 
 // Dapatkan hero section
+// Daftar gambar untuk background yang akan digunakan
+const banner = [
+    'images/banner 1.jpg', // Gambar pertama
+    'images/banner 2.jpg', // Gambar kedua
+    'images/banner 3.jpg'  // Gambar ketiga
+];
+
+// Dapatkan hero section
 const heroSection = document.querySelector('.hero');
 
 // Fungsi untuk mengganti gambar background berdasarkan scroll
@@ -49,3 +57,25 @@ function changeBannerOnScroll() {
 
 // Tambahkan event listener pada scroll untuk mendeteksi perubahan posisi scroll
 window.addEventListener('scroll', changeBannerOnScroll);
+
+
+// Fungsi untuk mengganti gambar background berdasarkan scroll
+function changeBannerOnScroll() {
+    const scrollPosition = window.scrollY;
+    let bannerIndex = 0;
+
+    // Tentukan index gambar berdasarkan scroll
+    if (scrollPosition > 1000) {
+        bannerIndex = 1;  // Setelah scroll 1000px, ganti ke banner2
+    }
+    if (scrollPosition > 2000) {
+        bannerIndex = 2;  // Setelah scroll 2000px, ganti ke banner3
+    }
+
+    // Ganti background image dengan gambar sesuai index
+    heroSection.style.backgroundImage = `url(${banners[bannerIndex]})`;
+}
+
+// Tambahkan event listener pada scroll untuk mendeteksi perubahan posisi scroll
+window.addEventListener('scroll', changeBannerOnScroll);
+

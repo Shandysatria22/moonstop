@@ -175,7 +175,6 @@ nav ul li a:hover {
 }
 
 /* Hero Section */
-/* Hero Section */
 .hero {
     background-image: url('images/banner1.jpg'); /* Gambar default */
     background-size: cover;
@@ -188,6 +187,7 @@ nav ul li a:hover {
     color: white;
     transition: background-image 0.5s ease-in-out; /* Transisi halus saat mengganti gambar */
 }
+
 
 
 .hero h2 {
