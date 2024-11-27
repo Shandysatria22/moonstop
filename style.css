@@ -80,4 +80,14 @@ body {
     }
   }
 
+  .navigation {
+    /* ... kode CSS yang sudah ada ... */
+    display: flex;
+    align-items: center; /* Agar logo dan dots sejajar vertikal */
+  }
   
+  .logo {
+    width: 50px; /* Sesuaikan ukuran logo */
+    height: auto;
+    margin-right: 20px; /* Jarak antara logo dan dots */
+  }
