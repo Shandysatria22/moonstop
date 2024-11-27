@@ -19,7 +19,6 @@ if (heroSections.length > 0 && dots.length > 0) {
     navigationContainer.setAttribute('role', 'tablist');
   }
 
-
   function scrollToSection(index) {
     if (index >= 0 && index < heroSections.length) {
       heroSections[index].scrollIntoView({ behavior: 'smooth' });
