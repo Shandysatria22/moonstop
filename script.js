@@ -23,9 +23,9 @@ window.addEventListener('scroll', () => {
 // Daftar gambar untuk background yang akan digunakan
 // Array gambar banner yang ingin diganti saat scroll
 const banners = [
-    'images/banner1.png',  // Banner pertama
-    'images/banner2.png',  // Banner kedua
-    'images/banner3.png',  // Banner ketiga
+    'images/banner-1.png',  // Banner pertama
+    'images/banner-2.png',  // Banner kedua
+    'images/banner-3.png',  // Banner ketiga
 ];
 
 // Menyimpan elemen hero
