@@ -27,7 +27,7 @@ body {
   font-size: 100px; /* Ukuran font 52px */
   font-weight: normal;
   text-align: center;
-  color: black;
+  color: white;
 }
 
 .moon {
@@ -115,7 +115,7 @@ body {
 .star:nth-child(8) { top: 80%; left: 30%; }
 
 
-#hero1 { background-image: url('images/banner-1.png'); }
+
 #hero2 { background-image: url('images/banner-2.png'); }
 #hero3 { background-image: url('images/banner-3.png'); }
 
