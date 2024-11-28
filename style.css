@@ -18,16 +18,81 @@ body {
 
 @font-face {
   font-family: 'Story Milky';
-  src: url('fonts/story-milky.woff') format('woff'),  /* Sesuaikan dengan format font yang di-download */
+  src: url('fonts/story-milky.woff') format('woff'),  
        url('fonts/story-milky.ttf') format('truetype');
 }
 
 #hero1 h1 {
   font-family: 'Story Milky', Arial, sans-serif;
-  font-size: 180px; /* Ukuran font 52px */
+  font-size: 100px; /* Ukuran font 52px */
   font-weight: normal;
   text-align: center;
   color: black;
+}
+
+.moon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  background-image: url('https://static.wikia.nocookie.net/b11cc6d2-dfea-4d17-b5bb-0d61eca88b12/scale-to-width/755'); /* URL gambar bulan */
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  animation: rotateMoon 10s linear infinite;
+  transform-origin: -120px center;
+}
+
+@keyframes rotateMoon {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.galaxy-banner {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  text-align: center;
+}
+
+.galaxy-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.star {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background-color: #fff;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: rotateGalaxy 10s linear infinite, flicker 2s infinite;
+}
+
+.star:nth-child(1) { top: 10%; left: 20%; animation-delay: 0s; }
+.star:nth-child(2) { top: 30%; left: 60%; animation-delay: 1s; }
+.star:nth-child(3) { top: 50%; left: 40%; animation-delay: 2s; }
+.star:nth-child(4) { top: 70%; left: 80%; animation-delay: 3s; }
+.star:nth-child(5) { top: 90%; left: 20%; animation-delay: 4s; }
+
+@keyframes rotateGalaxy {
+  0% { transform: rotate(0deg) translateX(50px); }
+  100% { transform: rotate(360deg) translateX(50px); }
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0.5; }
 }
 
 
