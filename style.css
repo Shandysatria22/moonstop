@@ -1,9 +1,13 @@
-body {
+html, body {
   margin: 0;
-  overflow-x: hidden;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* Mencegah scroll horizontal */
 }
 
 .hero-section {
+  position: relative;
   height: 100vh;
   width: 100%;
   display: flex;
@@ -16,6 +20,7 @@ body {
   transition: transform 0.5s ease-in-out;
 }
 
+
 @font-face {
   font-family: 'Story Milky';
   src: url('fonts/story-milky.otf') format('woff'),  
@@ -24,11 +29,17 @@ body {
 
 #hero1 h1 {
   font-family: 'Story Milky', Arial, sans-serif;
-  font-size: 100px; /* Ukuran font 52px */
+  font-size: 100px; /* Ukuran font 100px */
   font-weight: normal;
   text-align: center;
   color: white;
 }
+
+/* Sembunyikan menu di seluruh halaman */
+nav {
+  display: none;
+}
+
 
 .moon {
   position: absolute;
@@ -44,6 +55,11 @@ body {
   transform-origin: -120px center;
 }
 
+/* Pastikan bulan hanya ada di hero1 */
+#hero1 .moon {
+  z-index: 1; /* Pastikan bulan di atas background */
+}
+
 @keyframes rotateMoon {
   0% {
     transform: rotate(0deg);
@@ -53,8 +69,8 @@ body {
   }
 }
 
-/* Galaxy Background */
-.galaxy-background {
+/* Galaxy Background hanya untuk hero1 */
+#hero1 .galaxy-background {
   position: absolute;
   top: 0;
   left: 0;
@@ -62,17 +78,7 @@ body {
   height: 100vh;
   overflow: hidden;
   background: radial-gradient(circle, #1b2735, #090a0f); /* Warna galaxy */
-  z-index: -1;
-}
-
-.star {
-  position: absolute;
-  width: 3px;
-  height: 3px;
-  background-color: white;
-  border-radius: 50%;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-  animation: twinkle 5s infinite ease-in-out, moveStar 15s linear infinite;
+  z-index: -2; /* Pastikan galaxy tetap berada di bawah semua elemen */
 }
 
 /* Animasi Bintang Berkedip */
@@ -86,6 +92,16 @@ body {
 }
 
 /* Animasi Bintang Bergerak */
+.star {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  animation: twinkle 5s infinite ease-in-out, moveStar 15s linear infinite;
+  z-index: -1; /* Pastikan bintang tetap di bawah bulan dan teks */
+}
 @keyframes moveStar {
   0% {
     transform: translate(0px, 0px);
@@ -104,6 +120,16 @@ body {
   }
 }
 
+/* Animasi Bintang Berkedip */
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
 /* Membuat banyak bintang secara random */
 .star:nth-child(1) { top: 10%; left: 15%; }
 .star:nth-child(2) { top: 20%; left: 40%; }
@@ -114,11 +140,16 @@ body {
 .star:nth-child(7) { top: 60%; left: 10%; }
 .star:nth-child(8) { top: 80%; left: 30%; }
 
+/* Gambar latar belakang untuk hero2 dan hero3 */
+#hero2 { 
+  background-image: url('images/banner-2.png'); 
+}
 
+#hero3 { 
+  background-image: url('images/banner-3.png'); 
+}
 
-#hero2 { background-image: url('images/banner-2.png'); }
-#hero3 { background-image: url('images/banner-3.png'); }
-
+/* Navigasi titik */
 .navigation {
   position: fixed;
   top: 50%;
@@ -199,5 +230,217 @@ body, html {
     top: 10px;
     left: 10px;
   }
+}
+
+/* Tombol Unik di Hero 1 */
+.custom-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: white;
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: 'Story Milky', Arial, sans-serif;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: 30px;
+  transition: all 0.3s ease;  /* Transisi pada semua properti */
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.custom-button:hover {
+  background-color: #888888;  /* Warna abu-abu saat hover */
+  color: white;               /* Warna teks putih */
+  border-color: #888888;      /* Sesuaikan border dengan warna latar */
+  transform: scale(1.05);      /* Sedikit efek pembesaran */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);  /* Efek bayangan saat hover */
+}
+
+.custom-button:active {
+  transform: scale(1);        /* Menyembuhkan pembesaran saat klik */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.about-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Story Milky', Arial, sans-serif;
+  font-size: 18px; /* Ukuran font 100px */
+  padding: 4rem 10%;
+  background: linear-gradient(135deg, #1c1c1c, #2e2e2e);
+  color: #0c0c0c;
+}
+
+.about-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 3rem;
+}
+
+.about-text {
+  flex: 1;
+  max-width: 600px;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #090909;
+  margin-bottom: 1rem;
+}
+
+.highlight {
+  color: #53f6ff;
+  font-weight: bold;
+}
+
+.emphasis {
+  color: #806f0e;
+}
+
+.about-paragraph {
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.about-visual {
+  position: relative;
+  width: 350px;
+  height: 350px;
+}
+
+.about-icon {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+
+.visual-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.circle-animation {
+  width: 100%;
+  height: 100%;
+  border: 5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #141E30, #243B55);
+  color: #fff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.tokenomics-container {
+  position: relative;
+  z-index: 1;
+}
+
+.animated-title {
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+  font-family: 'Story Milky', Arial, sans-serif;
+  font-size: 58px; /* Ukuran font 100px */
+  animation: glow 2s infinite alternate;
+  background: linear-gradient(to right, #060606, #3e6ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.animated-supply {
+  font-size: 5rem;
+  margin-top: 20px;
+  font-family: 'Story Milky', Arial, sans-serif;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.supply-amount {
+  font-size: 5rem;
+  font-family: 'Story Milky', Arial, sans-serif;
+  font-weight: bold;
+  color: #0a0a0a;
+  animation: pulsate 2s infinite ease-in-out;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px #2a2318, 0 0 10px #ffe600, 0 0 20px #ffe600;
+  }
+  100% {
+    text-shadow: 0 0 20px #ff9d00, 0 0 40px #ffe600, 0 0 60px #ffe600;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulsate {
+  0%, 100% {
+    transform: scale(1);
+    color: #00ffab;
+  }
+  50% {
+    transform: scale(1.1);
+    color: #00ffcc;
+  }
+}
+
+/* Background animation */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.05), transparent 60%);
+  animation: moveBackground 10s infinite linear;
+  z-index: 0;
+}
+
+@keyframes moveBackground {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
