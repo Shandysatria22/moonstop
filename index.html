@@ -1,39 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moonstop Chain</title>
-<link rel="stylesheet" type="text/css" href="style.css">          
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moonstop Chain</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <header>
-    <img src="images/woiii.png" alt="Logo Website Anda" id="website-logo">
-  </header>
-  <section class="hero-section galaxy-banner" id="hero1">
-    <div class="galaxy-background">
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-    </div>
-    <div class="moon"></div>
-    <h1 class="moonstop-heading">MOONSTOP CHAIN</h1>
-</section>
-  <section class="hero-section" id="hero2">
-    <h1>Hero Banner 2</h1>
-    <p>Deskripsi Banner 2</p>
-  </section>
-  <section class="hero-section" id="hero3">
-    <h1>Hero Banner 3</h1>
-    <p>Deskripsi Banner 3</p>
-  </section>
-  <div class="navigation">
-    <span class="dot active"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
+<header>
+  <img src="images/woiii.png" alt="Logo Website Anda" id="website-logo">
+  <nav>
+    <ul>
+      <li><a href="#hero1">Home</a></li>
+      <li><a href="#hero2">About</a></li>
+      <li><a href="#hero3">Features</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Hero 1 - Galaxy Background -->
+<section class="hero-section galaxy-banner" id="hero1">
+  <div class="galaxy-background">
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
   </div>
-  <script src="script.js"></script>
+  <div class="moon"></div>
+  <h1 class="moonstop-heading">MOONSTOP TOKEN</h1>
+  <div class="button-group">
+    <a href="#hero2" class="custom-button">Buy Now</a>
+    <a href="#hero3" class="custom-button">Telegram</a>
+    <a href="#hero4" class="custom-button">Twitter</a>
+    <a href="#hero5" class="custom-button">Binance</a>
+  </div>
+</section>
+
+<!-- Hero 2 - About Section -->
+<section class="hero-section about-section" id="hero2">
+  <div class="about-content">
+    <div class="about-text">
+      <h1 class="about-title">
+        <span class="highlight">About</span> Moonstop Chain
+      </h1>
+      <p class="about-paragraph">
+        Moonstop Coin is more than just a digital currency—it's a gateway to the future of decentralized innovation. Designed for <span class="emphasis">speed</span>, <span class="emphasis">security</span>, and <span class="emphasis">scalability</span>, Moonstop Coin empowers users to experience the true potential of blockchain technology.
+      </p>
+      <p class="about-paragraph">
+        Our mission is to create a seamless, user-friendly ecosystem where transactions are <span class="highlight">lightning-fast</span>, <span class="highlight">transparent</span>, and <span class="highlight">cost-effective</span>. By leveraging cutting-edge technology, we’re building a platform that connects global communities, fuels creative solutions, and redefines how value is exchanged in the digital age.
+      </p>
+      <p class="about-paragraph">
+        With Moonstop Coin, you're not just investing in a cryptocurrency—you’re becoming part of a <span class="emphasis">movement</span> aimed at transforming the world through the power of <span class="highlight">decentralization</span>.
+      </p>
+    </div>
+    <div class="about-visual">
+      <img src="images/woiii.png" alt="Moonstop Icon" class="about-icon">
+      <div class="visual-overlay">
+        <div class="circle-animation"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Hero 3 -->
+<section class="hero-section" id="hero3">
+  <div class="tokenomics-container">
+    <h1 class="animated-title">TOKENOMICS</h1>
+    <p class="animated-supply">Token Supply: <span class="supply-amount">1,000,000 (BETA)</span></p>
+  </div>
+</section>
+
+
+<div class="navigation">
+  <span class="dot active"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
